@@ -5,12 +5,7 @@ import App from "./App.vue";
 import router from "./router";
 
 import { DefaultApolloClient, apolloClient } from "./config/apollo";
-
-import { library } from "@fortawesome/fontawesome-svg-core";
-import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
-import { faUserGroup, faRectangleList, faChessBoard } from "@fortawesome/free-solid-svg-icons";
-
-library.add(faUserGroup, faRectangleList, faChessBoard);
+import { FontAwesomeIcon } from "./config/icon";
 
 const app = createApp({
   setup() {
