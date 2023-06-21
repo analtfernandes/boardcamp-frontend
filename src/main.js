@@ -1,19 +1,26 @@
-import "./assets/styles/main.css"
+import "./assets/styles/main.css";
 
-import { createApp } from "vue"
-import App from "./App.vue"
-import router from "./router"
+import { createApp, provide, h } from "vue";
+import App from "./App.vue";
+import router from "./router";
 
-import { library } from "@fortawesome/fontawesome-svg-core"
-import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome"
-import { faUserGroup, faRectangleList, faChessBoard } from "@fortawesome/free-solid-svg-icons"
+import { DefaultApolloClient, apolloClient } from "./config/apollo";
 
-library.add(faUserGroup, faRectangleList, faChessBoard)
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+import { faUserGroup, faRectangleList, faChessBoard } from "@fortawesome/free-solid-svg-icons";
 
-const app = createApp(App)
+library.add(faUserGroup, faRectangleList, faChessBoard);
 
-app.component("font-awesome-icon", FontAwesomeIcon)
+const app = createApp({
+  setup() {
+    provide(DefaultApolloClient, apolloClient);
+  },
+  render: () => h(App)
+});
 
-app.use(router)
+app.component("font-awesome-icon", FontAwesomeIcon);
 
-app.mount("#app")
+app.use(router);
+
+app.mount("#app");
