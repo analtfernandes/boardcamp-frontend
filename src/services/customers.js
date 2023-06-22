@@ -1,6 +1,6 @@
 import gql from "graphql-tag";
 import { useQuery, useMutation } from "@vue/apollo-composable";
-import { apolloClient, provideApolloClient } from "@/config/apollo";
+import { provideApolloClient } from "@/config/apollo";
 
 provideApolloClient();
 
@@ -49,7 +49,7 @@ function list(returnData = defaultReturnData) {
 }
 
 function getById(id, returnData = defaultReturnData) {
-const CUSTOMERS_QUERY = gql`
+  const CUSTOMERS_QUERY = gql`
 		query Customer {
 		  customer(id: "${id}") ${returnData}
 		}
@@ -127,6 +127,6 @@ function deleteCustomer(id) {
   return formatResult(data);
 }
 
-const customersService = { list, getById, create, update, deleteCustomer };
+const customersService = { list, getById, create, update, deleteCustomer, defaultReturnData };
 
 export { customersService };

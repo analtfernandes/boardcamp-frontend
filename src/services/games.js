@@ -1,6 +1,6 @@
 import gql from "graphql-tag";
 import { useQuery, useMutation } from "@vue/apollo-composable";
-import { apolloClient, provideApolloClient } from "@/config/apollo";
+import { provideApolloClient } from "@/config/apollo";
 
 provideApolloClient();
 
@@ -121,6 +121,6 @@ function deleteGame(id) {
   return formatResult(data);
 }
 
-const gamesService = { list, create, update, deleteGame };
+const gamesService = { list, create, update, deleteGame, defaultReturnData };
 
 export { gamesService };

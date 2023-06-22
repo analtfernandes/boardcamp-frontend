@@ -1,6 +1,6 @@
 import gql from "graphql-tag";
 import { useQuery, useMutation } from "@vue/apollo-composable";
-import { apolloClient, provideApolloClient } from "@/config/apollo";
+import { provideApolloClient } from "@/config/apollo";
 
 provideApolloClient();
 
@@ -101,6 +101,6 @@ function deleteCategory(id) {
   return formatResult(data);
 }
 
-const categoriesService = { list, save, deleteCategory };
+const categoriesService = { list, save, deleteCategory, defaultReturnData };
 
 export { categoriesService };
