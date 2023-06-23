@@ -16,14 +16,15 @@
     "@fortawesome/free-solid-svg-icons": "^6.4.0",
     "@fortawesome/vue-fontawesome": "^3.0.3",
     "vue": "^3.3.4",
-    "vue-router": "^4.2.2"
+    "vue-router": "^4.2.2",
+    "vue-spinner": "^1.0.4"
   },
   "devDependencies": {
     "@apollo/client": "^3.7.16",
-    "@vue/apollo-composable": "^4.0.0-beta.7",
     "@rushstack/eslint-patch": "^1.2.0",
     "@vitejs/plugin-vue": "^4.2.3",
     "@vitejs/plugin-vue-jsx": "^3.0.1",
+    "@vue/apollo-composable": "^4.0.0-beta.7",
     "@vue/eslint-config-prettier": "^7.1.0",
     "@vue/test-utils": "^2.3.2",
     "eslint": "^8.39.0",
