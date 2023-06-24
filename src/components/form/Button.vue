@@ -45,6 +45,9 @@ button#form {
   color: #fff;
   border-radius: 4px;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 button#form:hover {
