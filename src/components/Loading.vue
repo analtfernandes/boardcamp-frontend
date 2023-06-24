@@ -1,8 +1,13 @@
 <script setup>
 import { ref, onMounted } from "vue";
 
+const props = defineProps({
+  size: {
+    type: String,
+    default: "60px"
+  }
+});
 const ellipsis = ref("...");
-const size = "60px";
 
 onMounted(initLoading);
 
@@ -16,7 +21,7 @@ function initLoading() {
 
 <template>
   <div class="container">
-    <loader loading="true" color="#483d8b" :size="size"></loader>
+    <loader :loading="true" color="#483d8b" :size="props.size"></loader>
     Carregando dados{{ ellipsis }}
   </div>
 </template>
