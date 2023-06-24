@@ -5,6 +5,14 @@ const props = defineProps({
   size: {
     type: String,
     default: "60px"
+  },
+  color: {
+    type: String,
+    default: "#483d8b"
+  },
+  text: {
+    type: Boolean,
+    default: true
   }
 });
 const ellipsis = ref("...");
@@ -21,8 +29,8 @@ function initLoading() {
 
 <template>
   <div class="container">
-    <loader :loading="true" color="#483d8b" :size="props.size"></loader>
-    Carregando dados{{ ellipsis }}
+    <loader :loading="true" :color="props.color" :size="props.size"></loader>
+    <span v-if="props.text">Carregando dados{{ ellipsis }} </span>
   </div>
 </template>
 
@@ -31,7 +39,6 @@ div.container {
   flex-shrink: 0;
   display: flex;
   width: calc(100% - var(--sidebar-width));
-  height: 100vh;
   justify-content: center;
   align-items: center;
   flex-direction: column;
