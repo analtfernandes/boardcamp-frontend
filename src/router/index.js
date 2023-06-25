@@ -4,6 +4,7 @@ import CustomersView from "../views/Customers.vue";
 import NewCustomerView from "../views/NewCustomer.vue";
 import CustomerView from "../views/Customer.vue";
 import GamesView from "../views/Games.vue";
+import NewGameView from "../views/NewGame.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -17,6 +18,11 @@ const router = createRouter({
       path: "/games",
       name: "games",
       component: GamesView
+    },
+    {
+      path: "/games/new",
+      name: "new-game",
+      component: NewGameView
     },
     {
       path: "/customers",
